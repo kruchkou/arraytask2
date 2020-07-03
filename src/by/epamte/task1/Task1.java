@@ -21,9 +21,9 @@ public class Task1 {
     public static String matrixToString(int[][] matrix) {
         StringBuilder result = new StringBuilder();
 
-        for (int rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
-            for (int colIndex = 0; colIndex < matrix[rowIndex].length; colIndex++) {
-                result.append(matrix[rowIndex][colIndex]).append(" ");
+        for (int[] rows : matrix) {
+            for (int element : rows) {
+                result.append(element).append(" ");
             }
             result.append("\n");
         }
