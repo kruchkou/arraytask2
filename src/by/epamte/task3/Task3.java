@@ -1,6 +1,4 @@
-package by.epamte.Task3;
-
-import by.epamte.task1.Task1;
+package by.epamte.task3;
 
 import static by.epamte.task1.Task1.matrixToString;
 

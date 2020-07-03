@@ -1,7 +1,5 @@
 package by.epamte.task4;
 
-import by.epamte.task1.Task1;
-
 import static by.epamte.task1.Task1.matrixToString;
 
 public class Task4 {
