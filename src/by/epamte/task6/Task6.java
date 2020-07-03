@@ -1,10 +1,8 @@
-package by.epamte.Task6;
+package by.epamte.task6;
 
 import by.epamte.task1.Task1;
 
-import javax.sql.rowset.RowSetWarning;
-
-public class task6 {
+public class Task6 {
 
     private static boolean isMagicCube(int[][] matrix) {
         final int ROW_SIZE = matrix.length;
@@ -13,7 +11,7 @@ public class task6 {
         final int SUMS_QUANTITY = LINES_QUANTITY + DIAGONAL_QUANTITY;
         final int DIAGONAL_SUM_INDEX = SUMS_QUANTITY - 1;
         final int DIAGONAL_SUM2_INDEX = SUMS_QUANTITY - 2;
-        int sums[] = new int[SUMS_QUANTITY];
+        int[] sums = new int[SUMS_QUANTITY];
 
         for (int rowIndex = 0; rowIndex < ROW_SIZE; rowIndex++) {
             for (int colIndex = 0; colIndex < ROW_SIZE; colIndex++) {
@@ -29,14 +27,10 @@ public class task6 {
             sums[DIAGONAL_SUM2_INDEX] += matrix[ROW_SIZE - 1 - rowIndex][ROW_SIZE - 1 - rowIndex];
         }
 
-        if (isSumsSame(sums) && (isNotSameNums(matrix))) {
-            return true;
-        }
-
-        return false;
+        return isSumsSame(sums) && (isNotSameNums(matrix));
     }
 
-    public static boolean isNotSameNums(int[][] cube) {
+    private static boolean isNotSameNums(int[][] cube) {
         final int ROW_SIZE = cube.length;
         final int ROW_LAST_INDEX = ROW_SIZE - 1;
         final int COL_LAST_INDEX = ROW_LAST_INDEX;
@@ -60,7 +54,7 @@ public class task6 {
         return true;
     }
 
-    public static boolean isSumsSame(int[] elements) {
+    private static boolean isSumsSame(int[] elements) {
         int prevElement = elements[0];
 
         for (int element : elements) {
@@ -97,13 +91,13 @@ public class task6 {
 
     private static String magicCube(int edgeSize) {
         final int LAST_ELEMENT_INDEX = edgeSize * edgeSize - 1;
-        int cube[][] = new int[edgeSize][edgeSize];
-        boolean isMagicCube = bruteForceElem(LAST_ELEMENT_INDEX, cube);
+        int[][] cube = new int[edgeSize][edgeSize];
+        bruteForceElem(LAST_ELEMENT_INDEX, cube);
 
         return Task1.matrixToString(cube);
     }
 
     public static void main(String[] args) {
-        System.out.println(magicCube(4));
+        System.out.println(magicCube(3));
     }
 }
